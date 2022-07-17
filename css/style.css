@@ -109,7 +109,7 @@ h5 {
 }
 
 .fading span {
-    animation: fading 3.5s alternate infinite;
+    animation: fading 6s alternate infinite;
     opacity: 0;
     font-family: 'Raleway', sans-serif;
     color: rgba(95, 75, 139, 1);
