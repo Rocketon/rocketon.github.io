@@ -56,16 +56,17 @@ h5 {
 }
 
 .jid-btn {
+    /*
+    padding: 1rem 0.5rem;
+    font-size: 1.25rem;
+    border-radius: 0.5rem;
+    */
     background-color: var(--color2);
     border: solid 2px var(--color1);
     color: white;
 }
-
-.jid-btn:hover {
-    background-color: var(--color1);
-    border: solid 2px var(--color1);
-}
-.jid-btn::selection {
+.jid-btn:hover,
+.jid-btn:focus {
     background-color: var(--color1);
     border: solid 2px var(--color1);
 }
