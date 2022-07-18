@@ -81,13 +81,17 @@
                         <form id="form-buy" onsubmit="buy()" method="POST" action="https://yoomoney.ru/quickpay/confirm.xml">
                             <input type="hidden" name="receiver" value="410011106317851"> 
                             <input type="hidden" name="formcomment" value="Курс Wildberries"> 
+                            <!--
                             <input type="hidden" name="short-dest" value="Курс Wildberries">
                             <input type="hidden" name="label" value="$order_id">
+                            <input type="hidden" name="need-phone" value="false">
+                            <input type="hidden" name="need-address" value="false"> 
+                            -->
                             <input type="hidden" name="quickpay-form" value="donate">
                             <input type="hidden" name="targets" value="транзакция {order_id}">
                             <input type="hidden" name="sum" value="800" data-type="number">
                             <div class="form-floating mb-3">
-                                <input name="need-fio" type="name" class="form-control" id="floatingInputName" placeholder="name@example.com">
+                                <input name="need-fio" type="text" class="form-control" id="floatingInputName" placeholder="name@example.com">
                                 <label for="floatingInput">Имя</label>
                             </div> 
 
@@ -96,8 +100,7 @@
                                 <label for="floatingInput" class="form-label mb-2">Адрес электронной почты</label>
                                 <div id="emailHelp" class="form-text mb-3 text-black">На почту придет ссылка для вступления закрытый телеграм канал.</div>
                             </div>
-                            <input type="hidden" name="need-phone" value="false">
-                            <input type="hidden" name="need-address" value="false"> 
+                            
                             <input type="hidden" name="paymentType" value="AC">
                             <div class="d-flex justify-content-center">
                                 <button type="submit" value="" class="jid-btn btn position-relative">
