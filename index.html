@@ -22,7 +22,7 @@
     <div class="alert alert-warning  fade text-center" role="alert">
         Вы не заполнили поля!
     </div>
-    <header class="header">
+    <header class="header mb-5">
         <div class="container">
             <div class="row">
                 <div class="col-12 justify-content-center">
@@ -53,7 +53,7 @@
             </div>
         </div>
     </section>
-    <section class="ladder">
+    <section class="ladder mb-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="ladder-item text-center fs-2 fading">Аналитика и поиск товара</div>
@@ -79,6 +79,7 @@
                     <div class="buy-form">
                         <a name="why"></a>
                         <form id="form-buy" onsubmit="buy()" method="POST" action="https://yoomoney.ru/quickpay/confirm.xml">
+                            <div class="label mb-3 text-white fs-5">В форме оплаты укажите свой email, на него придет информация о старте курса, а так же ссылки на наши ресурсы.</div>
                             <input type="hidden" name="receiver" value="410011106317851"> 
                             <input type="hidden" name="formcomment" value="Курс Wildberries">
                             <input type="hidden" name="short-dest" value="Курс Wildberries">
@@ -94,7 +95,7 @@
                             <input name="need-email" type="hidden" value="true">
                             <input type="hidden" name="paymentType" value="AC">
                             <div class="d-flex justify-content-center">
-                                <button type="submit" value="" class="jid-btn btn position-relative">
+                                <button type="submit" value="" class="jid-btn btn btn-lg position-relative">
                                     Записаться
                                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger text-white">
                                         800₽

@@ -19,7 +19,7 @@ body {
 }
 
 header {
-    height: 100vh;
+    
 }
 
 h1,
@@ -134,11 +134,11 @@ h5 {
 
 @keyframes fading {
     0% {
-        opacity: 0.3;
+        opacity: 0.6;
         filter: blur(10px);
     }
 
-    15% {
+    5% {
         color: rgba(81, 0, 255, 0.8)
     }
 
