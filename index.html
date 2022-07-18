@@ -100,7 +100,7 @@
                             <input type="hidden" name="need-address" value="false"> 
                             <input type="hidden" name="paymentType" value="AC">
                             <div class="d-flex justify-content-center">
-                                <button type="" value="" class="jid-btn btn position-relative">
+                                <button type="submit" value="" class="jid-btn btn position-relative">
                                     Записаться
                                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger text-white">
                                         800₽
@@ -127,15 +127,11 @@
             let email = document.getElementById('floatingInputEmail')
             if (name.value && email.value){
                 console.log('все введенно заебись')
-                form.submit;
             } else {
                 event.preventDefault()
                 showAlert('.alert-warning')
                 console.log('нихуя не введено')
             }
-            //form.action="https://yoomoney.ru/quickpay/confirm.xml"
-            //form.method="POST" 
-            //form.submit;
         }
         function showAlert(type) {
             let alert = document.querySelector(type)
@@ -146,7 +142,7 @@
                 setTimeout(
                     () => {
                     alert.classList.toggle('show')
-                }, 3 * 1000);}
+                }, 2 * 1000);}
         }
     </script>
     <!--timer-->
