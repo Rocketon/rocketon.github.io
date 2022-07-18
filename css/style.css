@@ -58,9 +58,14 @@ h5 {
 .jid-btn {
     background-color: var(--color2);
     border: solid 2px var(--color1);
+    color: white;
 }
 
 .jid-btn:hover {
+    background-color: var(--color1);
+    border: solid 2px var(--color1);
+}
+.jid-btn::selection {
     background-color: var(--color1);
     border: solid 2px var(--color1);
 }
@@ -136,7 +141,8 @@ h5 {
         color: rgba(81, 0, 255, 0.8)
     }
 
-    40%, 60% {
+    40%,
+    60% {
         color: rgba(0, 253, 156, 0.8)
     }
 
@@ -146,9 +152,22 @@ h5 {
         color: rgba(253, 173, 0, 0.8)
     }
 }
+#emailHelp {
+    font-family: 'Roboto', sans-serif;
+}
 .buy-form__timer {
     text-shadow: 2px 0 2px #000,
         0 2px 2px #000,
         -2px 0 2px #000,
         0 -2px 2px #000;
+}
+
+.alert {
+    position: fixed;
+    top: 15px;
+    left: 0;
+    right: 0;
+    max-width: 220px;
+    margin: 0 auto;
+    z-index: 3;
 }
