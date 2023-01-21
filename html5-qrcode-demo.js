@@ -20,10 +20,10 @@ docReady(function() {
             ++countResults;
             lastResult = decodedText;
             console.log(`Scan result = ${decodedText}`, decodedResult);
-			if decodedText == "Первый ответ":
-			  resultContainer.innerHTML += `<div>Конгратулятионс вы выбрали правильный ответ</div>`;
-			else:
-              alert('Увы! Ответ неверен!')
+		if (decodedText == "Первый ответ"):
+			resultContainer.innerHTML += `<div>Конгратулятионс вы выбрали правильный ответ</div>`;
+		else:
+			alert('Увы! Ответ неверен!');
             
             // Optional: To close the QR code scannign after the result is found
             html5QrcodeScanner.clear();
