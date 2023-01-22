@@ -1,11 +1,259 @@
-<html>
-  <head>
-    <title>Html-Qrcode Demo</title>
-  <body>
-    <div id="qr-reader" style="width:500px"></div>
-    <div id="qr-reader-results"></div>
-  </body>
-  <script src="not_min.js"></script>
-  <script src="html5-qrcode-demo.js"></script>
-  </head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name='viewport' content='width=device-width, height=device-height, initial-scale:1, user-scalable=no' />
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/uikit.min.css">
+  <script src="js/uikit.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>QR Runner</title>
+</head>
+
+<body>
+  <div class="main">
+
+    <div class="app uk-width-1-1" v-show="showMainMenu">
+      <button class='qr-scanner__switch_cam' v-show="state>-1" @click="openQR_scanner">
+        <img src="./content/qr-code-scan.svg" alt="">
+      </button>
+      <ul class="uk-dotnav">
+        <li :class="{ 'uk-active' : state==0, 'uk-actived' : state>0 }"><a href="#1">1</a></li>
+        <li :class="{ 'uk-active' : state==1, 'uk-actived' : state>1 }"><a href="#2">2</a></li>
+        <li :class="{ 'uk-active' : state==2, 'uk-actived' : state>2 }"><a href="#">3</a></li>
+        <li :class="{ 'uk-active' : state==3, 'uk-actived' : state>3 }"><a href="#">4</a></li>
+        <li :class="{ 'uk-active' : state==4, 'uk-actived' : state>4 }"><a href="#">5</a></li>
+        <li :class="{ 'uk-active' : state==5, 'uk-actived' : state>5 }"><a href="#">6</a></li>
+        <li :class="{ 'uk-active' : state==6, 'uk-actived' : state>6 }"><a href="#">7</a></li>
+      </ul>
+
+      <div class="quest_0" v-show="state==0">
+        <p class="hint">Первый QR-код находится у экрана с информацией о правителе, при котором на Руси появился первый
+          письменный
+          свод
+          законов. Отсканировав его, вы получите первую часть пароля и подсказку, где искать второй QR-код</p>
+      </div>
+      <div class="quest_1" v-show="state==1">
+        <p class="description">Первый общерусский свод законов был создан в годы правления Ярослава Мудрого. Он
+          назывался «Русская правда»,
+          регламентировал ключевые сферы жизни и серьёзно повлиял на развитие правовых отношений на Руси. Князь также
+          уделял большое внимание развитию экономики и торговли. Период его правления стал временем настоящего расцвета
+          Древней Руси.</p>
+        <p class="hint">Следующий элемент пароля вы найдёте у экрана с информацией о князе, чьё прозвище означало
+          «денежная сумка».
+        </p>
+
+      </div>
+      <div class="quest_2" v-show="state==2">
+        <p class="description">Во время правления Ивана Калиты Московское княжество стало сильнейшим на Руси. Ведя
+          дальновидную и расчётливую
+          политику, московский князь сумел превратить совсем ещё молодой город в центр русских земель. По одной из
+          версий,
+          за щедрость и мудрую экономику он и получил своё прозвище Калита – «денежная сумка».</p>
+
+        <p class="hint">Следующий элемент пароля вы найдёте у экрана с информацией о правителе, полностью взявшем под
+          контроль великий
+          торговый путь «из варяг в греки».</p>
+      </div>
+      <div class="quest_3" v-show="state==3">
+        <p class="description">При правлении князя Олега Русь получает контроль над днепровским участком великого
+          торгового пути из Балтики в
+          Чёрное море. С этого времени начинается расцвет великого торгового пути «из варяг в греки». По договорам,
+          заключённым Олегом, русские купцы получили от византийских императоров ряд привилегий и, главное, были
+          освобождены от всех пошлин. Несмотря на опасности и трудности пути «из варяг в греки», он становится мощной
+          транспортной артерией, экономическим и политическим хребтом Русского государства.</p>
+
+        <p class="hint">Следующий элемент пароля вы найдёте у экрана с информацией о князе, при котором Русь
+          окончательно освободилась
+          от монгольского ига.</p>
+      </div>
+      <div class="quest_4" v-show="state==4">
+        <p class="description">Иван III заслуженно считается освободителем Руси от монгольского ига. Стояние на реке
+          Угре в 1480 году,
+          результатом которого было отступление войск хана Ахмата, ознаменовало окончательную победу Руси в борьбе за
+          свою
+          независимость.</p>
+
+        <p class="hint">Следующий элемент пароля вы найдёте у экрана с информацией о правителе, носившем прозвище
+          Тёмный.</p>
+      </div>
+      <div class="quest_5" v-show="state==5">
+        <p class="description">Дружба великого князя Василия II с татарами и сборы на выкуп вызывали у многих москвичей
+          удивление. Этим решил
+          воспользоваться его двоюродный брат Дмитрий Шемяка. В 1446 году он, сговорившись в князем Иваном Можайским,
+          занимает Москву. Василий II был схвачен в Троице-Сергиевом монастыре, лишён зрения и отправлен в заточение. В
+          результате ослепления Василий II и получил в народе прозвище Тёмный.</p>
+
+        <p class="hint">Следующий элемент пароля вы найдёте у экрана с информацией о первом русском царе.</p>
+      </div>
+      <div class="quest_6" v-show="state==6">
+        <p class="description">Иван IV – одна из самых противоречивых исторических фигур, до настоящего времени
+          вызывающая оживлённые споры.
+          Выдающийся государственный деятель, жестокий деспот, талантливый писатель – все эти определения в равной
+          степени
+          применимы к незаурядной персоне первого русского царя и архитектора российского самодержавия.</p>
+
+        <p class="hint">Следующий элемент пароля вы найдёте у экрана с информацией о правителе, при котором Русь вошла в
+          христианскую
+          цивилизацию.</p>
+      </div>
+      <div class="quest_7" v-show="state==7">
+        <p class="description">Вхождение Руси в христианскую ойкумену, в результате Крещения в 988 году, открыло ей путь
+          для религиозных,
+          культурных, политических и экономических контактов с христианскими странами Европы и Азии. Принятие
+          христианства
+          дало мощный импульс развитию на Руси письменности, грамотности, книжного дела.</p>
+
+        <p class="hint">Поздравляем! Вы справились и завершили прохождение QR-квеста, продемонстрировав свои знания и
+          умение работать с информацией. Цифры пароля были выбраны нами неспроста – это годы правления династии
+          Рюриковичей - 862 – 1598.
+
+          Покажите этот ответ администратору Исторического парка и после возвращения планшета вы получите свой приз.
+          Поздравляем!</p>
+      </div>
+    </div>
+
+    <div class="app qr-scanner uk-width-1-1" v-show="showQR_scanner">
+
+      <div class="uk-card uk-card-default uk-card-body uk-width-1-1" v-show="state==-1">
+        <h3 class="uk-card-title">Добро пожаловать на сервер шизофрения</h3>
+        <p>Для начала игры отсканируйте первый QR код</p>
+      </div>
+
+      <button class='qr-scanner__switch_cam' v-show="state>-1" @click="goToMainMenu">
+        <img src="./content/qr-code-scan.svg" alt="">
+      </button>
+
+      <div class="qr-scanner__body">
+        <img src="./content/settings_btn.png" class="qr-scanner__setting-btn" @click="openSettings">
+        <qrcode-scanner :qrbox="300" :fps="10" @result="onScan" />
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="js/vue.js"></script>
+  <script src="js/qrcode.js"></script>
+
+  <script type="application/javascript">
+    Vue.component('qrcode-scanner', {
+      props: {
+        qrbox: {
+          type: Number,
+          default: 250
+        },
+        fps: {
+          type: Number,
+          default: 10
+        },
+      },
+      template: `<div id="qr-code-full-region"></div>`,
+      mounted() {
+        const config = {
+          fps: this.fps,
+          qrbox: this.qrbox,
+        };
+        const html5QrcodeScanner = new Html5QrcodeScanner('qr-code-full-region', config);
+        html5QrcodeScanner.render(this.onScanSuccess);
+        document.getElementById("qr-code-full-region__dashboard").style.display = "none";
+      },
+      methods: {
+        onScanSuccess(decodedText, decodedResult) {
+          this.$emit('result', decodedText, decodedResult);
+        }
+      }
+    });
+
+    let app = new Vue({
+      el: '.main',
+      data: {
+        showMainMenu: false,
+        showQR_scanner: true,
+        showItem1: false,
+        state: -1,
+        qr_s: 'start',
+        qr_1: 'ebjhsc',
+        qr_2: 'ityquw',
+        qr_3: 'gjasyw',
+        qr_4: 'jgktws',
+        qr_5: 'zjamsk',
+        qr_6: 'bnaiws',
+        qr_7: 'iakwsl',
+      },
+      methods: {
+        clearScreen() {
+          this.showMainMenu = false;
+          this.showQR_scanner = false;
+          this.showItem1 = false;
+          window.scrollTo(0, 0);
+        },
+        goToMainMenu() {
+          this.clearScreen()
+          this.showMainMenu = true
+        },
+        openQR_scanner() {
+          this.clearScreen()
+          this.showQR_scanner = true
+        },
+        onScan(decodedText, decodedResult) {
+          alert(`sex with ${decodedTest}`)
+          if (decodedTest == this.qr_s && this.state == -1) {
+            this.state == 0
+            this.goToMainMenu()
+          } else if (decodedTest == this.qr_1 && this.state == 0) {
+            this.state += 1;
+            this.goToMainMenu()
+          } else if (decodedTest == this.qr_2 && this.state == 1) {
+            this.state += 1;
+            this.goToMainMenu()
+          } else if (decodedTest == this.qr_3 && this.state == 2) {
+            this.state += 1;
+            this.goToMainMenu()
+          } else if (decodedTest == this.qr_4 && this.state == 3) {
+            this.state += 1;
+            this.goToMainMenu()
+          } else if (decodedTest == this.qr_5 && this.state == 4) {
+            this.state += 1;
+            this.goToMainMenu()
+          } else if (decodedTest == this.qr_6 && this.state == 5) {
+            this.state += 1;
+            this.goToMainMenu()
+          } else if (decodedTest == this.qr_7 && this.state == 6) {
+            this.state += 1;
+            this.goToMainMenu()
+          }
+        },
+        openSettings() {
+          if (document.getElementById("qr-code-full-region__dashboard").style.display == "none") {
+            document.getElementById("qr-code-full-region__dashboard").style.display = "block";
+          } else {
+            document.getElementById("qr-code-full-region__dashboard").style.display = "none";
+          }
+        },
+        syncWithLocal() {
+
+        },
+        checkBrowser() {
+
+        }
+      },
+    })
+
+    // отделить планшеты
+    setTimeout(() => {
+      if (navigator.userAgent == 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36') {
+        app.goToMainMenu()
+        app.state = 0
+      };
+    }, 100);
+
+
+  </script>
+
+</body>
+
 </html>
