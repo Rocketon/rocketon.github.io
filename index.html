@@ -200,33 +200,32 @@
           this.showQR_scanner = true
         },
         onScan(decodedText, decodedResult) {
-          alert(`sex with ${decodedTest}`)
-          if (decodedTest == this.qr_s && this.state == -1) {
-            this.state == 0
+          if (decodedText == this.qr_s && this.state == -1) {
+            this.state = 0
             this.goToMainMenu()
-          } else if (decodedTest == this.qr_1 && this.state == 0) {
+          } else if (decodedText == this.qr_1 && this.state == 0) {
             this.state += 1;
             this.goToMainMenu()
-          } else if (decodedTest == this.qr_2 && this.state == 1) {
+          } else if (decodedText == this.qr_2 && this.state == 1) {
             this.state += 1;
             this.goToMainMenu()
-          } else if (decodedTest == this.qr_3 && this.state == 2) {
+          } else if (decodedText == this.qr_3 && this.state == 2) {
             this.state += 1;
             this.goToMainMenu()
-          } else if (decodedTest == this.qr_4 && this.state == 3) {
+          } else if (decodedText == this.qr_4 && this.state == 3) {
             this.state += 1;
             this.goToMainMenu()
-          } else if (decodedTest == this.qr_5 && this.state == 4) {
+          } else if (decodedText == this.qr_5 && this.state == 4) {
             this.state += 1;
             this.goToMainMenu()
-          } else if (decodedTest == this.qr_6 && this.state == 5) {
+          } else if (decodedText == this.qr_6 && this.state == 5) {
             this.state += 1;
             this.goToMainMenu()
-          } else if (decodedTest == this.qr_7 && this.state == 6) {
+          } else if (decodedText == this.qr_7 && this.state == 6) {
             this.state += 1;
             this.goToMainMenu()
           } else {
-            alert(`Text = ${decodedTest}; \n State = ${this.state}`)
+            console.log(`Text = ${decodedText}; \n State = ${this.state}`)
           }
         },
         openSettings() {
@@ -251,7 +250,7 @@
         app.goToMainMenu()
         app.state = 0
       };
-    }, 100);
+    }, 1000);
 
 
   </script>
