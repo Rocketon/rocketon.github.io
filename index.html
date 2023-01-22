@@ -225,6 +225,8 @@
           } else if (decodedTest == this.qr_7 && this.state == 6) {
             this.state += 1;
             this.goToMainMenu()
+          } else {
+            alert(`Text = ${decodedTest}; \n State = ${this.state}`)
           }
         },
         openSettings() {
