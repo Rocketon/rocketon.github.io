@@ -1,8 +1,11 @@
 * {
   box-sizing: border-box;
 }
-
+address, dl, fieldset, figure, ol, p, pre, ul {
+  margin: 0;
+}
 .app {
+  min-height: 895px;
   max-width: 720px;
   margin: 0 auto;
   position: relative;
@@ -27,30 +30,29 @@
 
 .qr-scanner__switch_cam {
   position: absolute;
-  right: 5px;
-  top: 75vh;
+  margin-left: auto;
+margin-right: auto;
+left: 0;
+right: 0;
+text-align: center;
+  bottom: 50px;
   background-color: rgba(28, 28, 28, 0);
   z-index: 9999;
 }
 
 .qr-scanner__switch_cam img {
-  height: 75px;
-  width: 75px;
-}
 
-.uk-active a {
-  background-color: yellow !important;
-}
-
-.uk-actived a {
-  background-color: green !important;
 }
 
 .uk-dotnav {
   margin-top: 15px;
   justify-content: space-around;
+  margin: 0;
 }
-
+.uk-dotnav>*>:hover {
+  background-color: transparent;
+  border-color: #09D9D8;
+}
 .uk-dotnav>*>* {
   width: 35px;
   height: 35px;
@@ -65,3 +67,49 @@
   font-size: 14pt;
   font-style: italic;
 }
+
+.rckt-dotnav {
+	min-height:100px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	background: rgb(131,58,180);
+	background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+.rckt-dotnav>* {
+	padding: 0;
+	overflow:hidden;
+}
+.rckt-dotnav>*>* {
+	border: 5px outset #09D9D8;
+}
+.rctk-active {
+background: rgb(242,252,1);
+background: radial-gradient(circle, rgba(242,252,1,1) 0%, rgba(148,233,233,1) 100%);
+}
+.rctk-actived {
+background: rgb(40,252,1);
+background: radial-gradient(circle, rgba(40,252,1,1) 0%, rgba(148,233,233,1) 100%);
+}
+.quests {
+	height: 795px;
+	padding: 15px 20px;
+	
+	background: rgb(131,58,180);
+	background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+	
+}
+.description {
+	background: rgb(25,94,171);
+	background: radial-gradient(circle, rgba(25,94,171,1) 50%, rgba(111,137,166,1) 100%);
+	margin: 0 auto;
+	color: cyan;
+}
+.hint {
+	margin-top: 15px;
+	background: rgb(25,171,150);
+	background: radial-gradient(circle, rgba(25,171,150,0.37) 50%, rgba(111,166,164,0.26) 100%);
+	color: cyan;
+}
+
+
