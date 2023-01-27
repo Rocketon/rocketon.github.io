@@ -5,12 +5,16 @@ address, dl, fieldset, figure, ol, p, pre, ul {
   margin: 0;
 }
 .app {
-  min-height: 895px;
+  min-height: 100vh;
   max-width: 720px;
   margin: 0 auto;
   position: relative;
+  background: rgb(131,58,180);
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
 }
-
+.rctk-app{
+	padding-bottom: 119px;
+}
 .qr-scanner__body {
   position: relative;
 }
@@ -30,13 +34,14 @@ address, dl, fieldset, figure, ol, p, pre, ul {
 
 .qr-scanner__switch_cam {
   position: absolute;
-  margin-left: auto;
+  bottom: 0px;
+  width: 300px;
+  position: absolute;
+margin-left: auto;
 margin-right: auto;
 left: 0;
 right: 0;
 text-align: center;
-  bottom: 50px;
-  background-color: rgba(28, 28, 28, 0);
   z-index: 9999;
 }
 
@@ -74,7 +79,6 @@ text-align: center;
 	align-items: center;
 	justify-content: space-around;
 	background: rgb(131,58,180);
-	background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
 }
 .rckt-dotnav>* {
 	padding: 0;
@@ -92,12 +96,7 @@ background: rgb(40,252,1);
 background: radial-gradient(circle, rgba(40,252,1,1) 0%, rgba(148,233,233,1) 100%);
 }
 .quests {
-	height: 795px;
 	padding: 15px 20px;
-	
-	background: rgb(131,58,180);
-	background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-	
 }
 .description {
 	background: rgb(25,94,171);

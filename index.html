@@ -16,10 +16,7 @@
 <body>
   <div class="main">
 
-    <div class="app uk-width-1-1" v-show="showMainMenu">
-      <button class='qr-scanner__switch_cam' v-show="state>-1" @click="openQR_scanner">
-        <img src="./content/scan_btn.png" alt="">
-      </button>
+    <div class="app rctk-app uk-width-1-1" v-show="showMainMenu">
       <ul class="uk-dotnav rckt-dotnav">
         <li><a :class="{ 'rctk-active' : state==0, 'rctk-actived' : state>0 }" href="#1">1</a></li>
         <li><a :class="{ 'rctk-active' : state==1, 'rctk-actived' : state>1 }" href="#2">2</a></li>
@@ -115,7 +112,10 @@
 			  Поздравляем!</p>
 		  </div>
 	  </div>
-    </div>
+	  <div class='qr-scanner__switch_cam' v-show="state>-1" @click="openQR_scanner">
+        <img src="./content/scan_btn.png" alt="">
+      </div>
+	</div>
 
     <div class="app qr-scanner uk-width-1-1" v-show="showQR_scanner">
 
@@ -124,9 +124,9 @@
         <p>Для начала игры отсканируйте первый QR код</p>
       </div>
 
-      <button class='qr-scanner__switch_cam' v-show="state>-1" @click="goToMainMenu">
+      <div class='qr-scanner__switch_cam' v-show="state>-1" @click="goToMainMenu">
         <img src="./content/scan_btn.png" alt="">
-      </button>
+      </div>
 
       <div class="qr-scanner__body">
         <img src="./content/settings_btn.png" class="qr-scanner__setting-btn" @click="openSettings">
