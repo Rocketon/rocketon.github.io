@@ -260,6 +260,9 @@
           } else {
             console.log(`Text = ${decodedText}; \n State = ${this.state}`)
 			this.openQR_scanner_error()
+			setTimeout(() => {
+				this.showQR_scanner_error = false;
+		    }, "3000")
           }
         },
         openSettings() {
