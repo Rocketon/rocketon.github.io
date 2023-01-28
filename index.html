@@ -244,17 +244,22 @@
           } else if (decodedText == this.qr_4 && this.state == 3) {
             this.state += 1;
             this.goToMainMenu()
+			this.openQR_scanner_success()
           } else if (decodedText == this.qr_5 && this.state == 4) {
             this.state += 1;
             this.goToMainMenu()
+			this.openQR_scanner_success()
           } else if (decodedText == this.qr_6 && this.state == 5) {
             this.state += 1;
             this.goToMainMenu()
+			this.openQR_scanner_success()
           } else if (decodedText == this.qr_7 && this.state == 6) {
             this.state += 1;
             this.goToMainMenu()
+			this.openQR_scanner_success()
           } else {
             console.log(`Text = ${decodedText}; \n State = ${this.state}`)
+			this.openQR_scanner_error()
           }
         },
         openSettings() {
