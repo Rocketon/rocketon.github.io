@@ -1,19 +1,30 @@
+@font-face {
+	font-family: "old_slave"; 
+	src: url("../content/old_slave.ttf"); 
+}
+
 * {
   box-sizing: border-box;
 }
 address, dl, fieldset, figure, ol, p, pre, ul {
   margin: 0;
 }
+.main {
+  height: 100vh;
+  
+}
 .app {
-  min-height: 100vh;
-  max-width: 720px;
+  min-height: 100%;
+  max-height: 895px;
+  max-width: 602px;
   margin: 0 auto;
   position: relative;
-  background: rgb(131,58,180);
-  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+  background: url("../content/bg.jpg");
+  background-size: cover;
 }
 .rctk-app{
-	padding-bottom: 119px;
+	padding-top: 75px;
+	padding-bottom: calc(120px + 1em);
 }
 .qr-scanner__body {
   position: relative;
@@ -32,21 +43,39 @@ address, dl, fieldset, figure, ol, p, pre, ul {
   z-index: 2;
 }
 
+.qr-scanner{
+	height: 100vh;
+}
 .qr-scanner__switch_cam {
   position: absolute;
-  bottom: 0px;
-  width: 300px;
+  bottom: 1em;
   position: absolute;
-margin-left: auto;
-margin-right: auto;
-left: 0;
-right: 0;
-text-align: center;
-  z-index: 9999;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 3;
 }
 
-.qr-scanner__switch_cam img {
-
+.qr-scanner__switch_cam_button {
+  width: 160px;
+  height: 60px;
+  color: #fff;
+  border-radius: 5px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+  background: #DAA520;
+  border: none;
+  font-family: 'old_slave'; 
+  font-size: 20px;
 }
 
 .uk-dotnav {
@@ -56,7 +85,7 @@ text-align: center;
 }
 .uk-dotnav>*>:hover {
   background-color: transparent;
-  border-color: #09D9D8;
+  border-color: #f39f18;
 }
 .uk-dotnav>*>* {
   width: 35px;
@@ -64,51 +93,125 @@ text-align: center;
 }
 
 .description {
-  color:black;
+  color: black;
   font-size: 18pt;
 }
 .hint {
-  color:goldenrod;
-  font-size: 14pt;
+  color: black;
+  font-size: 20pt;
   font-style: italic;
+  text-align: center;
 }
 
 .rckt-dotnav {
-	min-height:100px;
+	height:75px;
+	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
-	background: rgb(131,58,180);
+	position: absolute;
+	top:0;
+	left:0;
+	
 }
 .rckt-dotnav>* {
 	padding: 0;
 	overflow:hidden;
 }
 .rckt-dotnav>*>* {
-	border: 5px outset #09D9D8;
+	border: 3px inset #f39f18;
 }
 .rctk-active {
-background: rgb(242,252,1);
-background: radial-gradient(circle, rgba(242,252,1,1) 0%, rgba(148,233,233,1) 100%);
+background: rgba(15,15,15,0.15);
 }
 .rctk-actived {
-background: rgb(40,252,1);
-background: radial-gradient(circle, rgba(40,252,1,1) 0%, rgba(148,233,233,1) 100%);
+background: #f39f18;
 }
 .quests {
+	font-family: 'old_slave'; 
 	padding: 15px 20px;
 }
 .description {
-	background: rgb(25,94,171);
-	background: radial-gradient(circle, rgba(25,94,171,1) 50%, rgba(111,137,166,1) 100%);
 	margin: 0 auto;
-	color: cyan;
 }
 .hint {
+	font-family: 'old_slave'; 
 	margin-top: 15px;
-	background: rgb(25,171,150);
-	background: radial-gradient(circle, rgba(25,171,150,0.37) 50%, rgba(111,166,164,0.26) 100%);
-	color: cyan;
 }
 
+.error {
+	background: red;
+	
+	width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    overflow: auto;
+	
+	animation-duration: 1s;
+    animation-name: redblink;
+	
+	z-index: 100;
+}
+.qr-error {
+	margin: 0 auto;
+	text-align: center;
+	font-family: 'old_slave'; 
+	font-size: 5em;
+	color: black;
+}
 
+@keyframes redblink {
+  from {
+    background: rgba(255,0,0,0.0);
+  }
+  50% {
+	  background: rgba(255,0,0,0.5);
+  }
+  to {
+    background: rgba(255,0,0,0.0);
+  }
+}
+
+.success {
+	background: red;
+	width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    overflow: auto;
+	
+	animation-duration: 1s;
+    animation-name: greenblink;
+	
+	z-index: 100;
+}
+.qr-success {
+	margin: 0 auto;
+	text-align: center;
+	font-family: 'old_slave'; 
+	font-size: 5em;
+	color: black;
+}
+
+@keyframes greenblink {
+  from {
+    background: rgba(0,255,0,0.0);
+  }
+  50% {
+	  background: rgba(0,255,0,0.5);
+  }
+  to {
+    background: rgba(0,255,0,0.0);
+  }
+}

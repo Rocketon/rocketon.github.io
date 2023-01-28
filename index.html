@@ -28,10 +28,10 @@
       </ul>
 	  <div class="quests">
 		  <div class="quest" v-show="state==0">
-			<p class="hint">Первый QR-код находится у экрана с информацией о правителе, при котором на Руси появился первый
+			<p class="hint">Первый код находится у экрана с информацией о правителе, при котором на Руси появился первый
 			  письменный
 			  свод
-			  законов. Отсканировав его, вы получите первую часть пароля и подсказку, где искать второй QR-код</p>
+			  законов. Отсканировав его, вы получите первую часть пароля и подсказку, где искать второй код</p>
 		  </div>
 		  <div class="quest" v-show="state==1">
 			<p class="description">Первый общерусский свод законов был создан в годы правления Ярослава Мудрого. Он
@@ -39,7 +39,7 @@
 			  регламентировал ключевые сферы жизни и серьёзно повлиял на развитие правовых отношений на Руси. Князь также
 			  уделял большое внимание развитию экономики и торговли. Период его правления стал временем настоящего расцвета
 			  Древней Руси.</p>
-			<p class="hint">Следующий элемент пароля вы найдёте у экрана с информацией о князе, чьё прозвище означало
+			<p class="hint">Следующий элемент вы найдёте у экрана с информацией о князе, чьё прозвище означало
 			  «денежная сумка».
 			</p>
 
@@ -51,7 +51,7 @@
 			  версий,
 			  за щедрость и мудрую экономику он и получил своё прозвище Калита – «денежная сумка».</p>
 
-			<p class="hint">Следующий элемент пароля вы найдёте у экрана с информацией о правителе, полностью взявшем под
+			<p class="hint">Следующий элемент вы найдёте у экрана с информацией о правителе, полностью взявшем под
 			  контроль великий
 			  торговый путь «из варяг в греки».</p>
 		  </div>
@@ -63,7 +63,7 @@
 			  освобождены от всех пошлин. Несмотря на опасности и трудности пути «из варяг в греки», он становится мощной
 			  транспортной артерией, экономическим и политическим хребтом Русского государства.</p>
 
-			<p class="hint">Следующий элемент пароля вы найдёте у экрана с информацией о князе, при котором Русь
+			<p class="hint">Следующий элемент вы найдёте у экрана с информацией о князе, при котором Русь
 			  окончательно освободилась
 			  от монгольского ига.</p>
 		  </div>
@@ -74,7 +74,7 @@
 			  свою
 			  независимость.</p>
 
-			<p class="hint">Следующий элемент пароля вы найдёте у экрана с информацией о правителе, носившем прозвище
+			<p class="hint">Следующий элемент вы найдёте у экрана с информацией о правителе, носившем прозвище
 			  Тёмный.</p>
 		  </div>
 		  <div class="quest" v-show="state==5">
@@ -84,7 +84,7 @@
 			  занимает Москву. Василий II был схвачен в Троице-Сергиевом монастыре, лишён зрения и отправлен в заточение. В
 			  результате ослепления Василий II и получил в народе прозвище Тёмный.</p>
 
-			<p class="hint">Следующий элемент пароля вы найдёте у экрана с информацией о первом русском царе.</p>
+			<p class="hint">Следующий элемент вы найдёте у экрана с информацией о первом русском царе.</p>
 		  </div>
 		  <div class="quest" v-show="state==6">
 			<p class="description">Иван IV – одна из самых противоречивых исторических фигур, до настоящего времени
@@ -93,7 +93,7 @@
 			  степени
 			  применимы к незаурядной персоне первого русского царя и архитектора российского самодержавия.</p>
 
-			<p class="hint">Следующий элемент пароля вы найдёте у экрана с информацией о правителе, при котором Русь вошла в
+			<p class="hint">Следующий элемент вы найдёте у экрана с информацией о правителе, при котором Русь вошла в
 			  христианскую
 			  цивилизацию.</p>
 		  </div>
@@ -113,7 +113,7 @@
 		  </div>
 	  </div>
 	  <div class='qr-scanner__switch_cam' v-show="state>-1" @click="openQR_scanner">
-        <img src="./content/scan_btn.png" alt="">
+        <button class='qr-scanner__switch_cam_button'>Сканировать</button>
       </div>
 	</div>
 
@@ -125,13 +125,24 @@
       </div>
 
       <div class='qr-scanner__switch_cam' v-show="state>-1" @click="goToMainMenu">
-        <img src="./content/scan_btn.png" alt="">
+        <button class='qr-scanner__switch_cam_button'>Сканировать</button>
       </div>
 
       <div class="qr-scanner__body">
         <img src="./content/settings_btn.png" class="qr-scanner__setting-btn" @click="openSettings">
         <qrcode-scanner :qrbox="300" :fps="10" @result="onScan" />
       </div>
+    </div>
+	
+	<div class="app qr-scanner error uk-width-1-1" v-show="showQR_scanner_error">
+        <div class="qr-error">
+			Неверно!
+		</div>
+    </div>
+	<div class="app qr-scanner success uk-width-1-1" v-show="showQR_scanner_success">
+        <div class="qr-success">
+			Верно!
+		</div>
     </div>
   </div>
 
@@ -174,6 +185,8 @@
       data: {
         showMainMenu: false,
         showQR_scanner: true,
+		showQR_scanner_error: false,
+		showQR_scanner_success: false,
         showItem1: false,
         state: -1,
         qr_s: 'start',
@@ -200,6 +213,18 @@
           this.clearScreen()
           this.showQR_scanner = true
         },
+		openQR_scanner_error() {
+          this.showQR_scanner_error = true
+		  setTimeout(() => {
+			this.showQR_scanner_error = false;
+		  }, "1000")
+        },
+		openQR_scanner_success() {
+          this.showQR_scanner_success = true
+		  setTimeout(() => {
+			this.showQR_scanner_success = false;
+		  }, "1000")
+        },
         onScan(decodedText, decodedResult) {
           if (decodedText == this.qr_s && this.state == -1) {
             this.state = 0
@@ -207,12 +232,15 @@
           } else if (decodedText == this.qr_1 && this.state == 0) {
             this.state += 1;
             this.goToMainMenu()
+			this.openQR_scanner_success()
           } else if (decodedText == this.qr_2 && this.state == 1) {
             this.state += 1;
             this.goToMainMenu()
+			this.openQR_scanner_success()
           } else if (decodedText == this.qr_3 && this.state == 2) {
             this.state += 1;
             this.goToMainMenu()
+			this.openQR_scanner_success()
           } else if (decodedText == this.qr_4 && this.state == 3) {
             this.state += 1;
             this.goToMainMenu()
