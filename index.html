@@ -259,9 +259,8 @@
 			this.openQR_scanner_success()
           } else {
             console.log(`Text = ${decodedText}; \n State = ${this.state}`)
-			this.openQR_scanner_error()
 			setTimeout(() => {
-				this.showQR_scanner_error = false;
+				this.openQR_scanner_error()
 		    }, "3000")
           }
         },
