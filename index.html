@@ -257,11 +257,14 @@
             this.state += 1;
             this.goToMainMenu()
 			this.openQR_scanner_success()
-          } else {
-            console.log(`Text = ${decodedText}; \n State = ${this.state}`)
+          } else if (decodedText.length == 6) {
+            this.state += 1;
+            this.goToMainMenu()
 			setTimeout(() => {
 				this.openQR_scanner_error()
 		    }, "3000")
+          } else {
+            console.log(`Text = ${decodedText}; \n State = ${this.state}`)
           }
         },
         openSettings() {
