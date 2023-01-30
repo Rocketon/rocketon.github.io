@@ -26,96 +26,100 @@
         <li><a :class="{ 'rctk-active' : state==5, 'rctk-actived' : state>5 }" href="#6">6</a></li>
         <li><a :class="{ 'rctk-active' : state==6, 'rctk-actived' : state>6 }" href="#7">7</a></li>
       </ul>
-	  <div class="quests">
-		  <div class="quest" v-show="state==0">
-			<p class="hint">Первый код находится у экрана с информацией о правителе, при котором на Руси появился первый
-			  письменный
-			  свод
-			  законов. Отсканировав его, вы получите первую часть пароля и подсказку, где искать второй код</p>
-		  </div>
-		  <div class="quest" v-show="state==1">
-			<p class="description">Первый общерусский свод законов был создан в годы правления Ярослава Мудрого. Он
-			  назывался «Русская правда»,
-			  регламентировал ключевые сферы жизни и серьёзно повлиял на развитие правовых отношений на Руси. Князь также
-			  уделял большое внимание развитию экономики и торговли. Период его правления стал временем настоящего расцвета
-			  Древней Руси.</p>
-			<p class="hint">Следующий элемент вы найдёте у экрана с информацией о князе, чьё прозвище означало
-			  «денежная сумка».
-			</p>
+      <div class="quests">
+        <div class="quest" v-show="state==0">
+          <p class="hint">Первый код находится у экрана с информацией о правителе, при котором на Руси появился первый
+            письменный
+            свод
+            законов. Отсканировав его, вы получите первую часть пароля и подсказку, где искать второй код</p>
+        </div>
+        <div class="quest" v-show="state==1">
+          <p class="description">Первый общерусский свод законов был создан в годы правления Ярослава Мудрого. Он
+            назывался «Русская правда»,
+            регламентировал ключевые сферы жизни и серьёзно повлиял на развитие правовых отношений на Руси. Князь также
+            уделял большое внимание развитию экономики и торговли. Период его правления стал временем настоящего
+            расцвета
+            Древней Руси.</p>
+          <p class="hint">Следующий элемент вы найдёте у экрана с информацией о князе, чьё прозвище означало
+            «денежная сумка».
+          </p>
 
-		  </div>
-		  <div class="quest" v-show="state==2">
-			<p class="description">Во время правления Ивана Калиты Московское княжество стало сильнейшим на Руси. Ведя
-			  дальновидную и расчётливую
-			  политику, московский князь сумел превратить совсем ещё молодой город в центр русских земель. По одной из
-			  версий,
-			  за щедрость и мудрую экономику он и получил своё прозвище Калита – «денежная сумка».</p>
+        </div>
+        <div class="quest" v-show="state==2">
+          <p class="description">Во время правления Ивана Калиты Московское княжество стало сильнейшим на Руси. Ведя
+            дальновидную и расчётливую
+            политику, московский князь сумел превратить совсем ещё молодой город в центр русских земель. По одной из
+            версий,
+            за щедрость и мудрую экономику он и получил своё прозвище Калита – «денежная сумка».</p>
 
-			<p class="hint">Следующий элемент вы найдёте у экрана с информацией о правителе, полностью взявшем под
-			  контроль великий
-			  торговый путь «из варяг в греки».</p>
-		  </div>
-		  <div class="quest" v-show="state==3">
-			<p class="description">При правлении князя Олега Русь получает контроль над днепровским участком великого
-			  торгового пути из Балтики в
-			  Чёрное море. С этого времени начинается расцвет великого торгового пути «из варяг в греки». По договорам,
-			  заключённым Олегом, русские купцы получили от византийских императоров ряд привилегий и, главное, были
-			  освобождены от всех пошлин. Несмотря на опасности и трудности пути «из варяг в греки», он становится мощной
-			  транспортной артерией, экономическим и политическим хребтом Русского государства.</p>
+          <p class="hint">Следующий элемент вы найдёте у экрана с информацией о правителе, полностью взявшем под
+            контроль великий
+            торговый путь «из варяг в греки».</p>
+        </div>
+        <div class="quest" v-show="state==3">
+          <p class="description">При правлении князя Олега Русь получает контроль над днепровским участком великого
+            торгового пути из Балтики в
+            Чёрное море. С этого времени начинается расцвет великого торгового пути «из варяг в греки». По договорам,
+            заключённым Олегом, русские купцы получили от византийских императоров ряд привилегий и, главное, были
+            освобождены от всех пошлин. Несмотря на опасности и трудности пути «из варяг в греки», он становится мощной
+            транспортной артерией, экономическим и политическим хребтом Русского государства.</p>
 
-			<p class="hint">Следующий элемент вы найдёте у экрана с информацией о князе, при котором Русь
-			  окончательно освободилась
-			  от монгольского ига.</p>
-		  </div>
-		  <div class="quest" v-show="state==4">
-			<p class="description">Иван III заслуженно считается освободителем Руси от монгольского ига. Стояние на реке
-			  Угре в 1480 году,
-			  результатом которого было отступление войск хана Ахмата, ознаменовало окончательную победу Руси в борьбе за
-			  свою
-			  независимость.</p>
+          <p class="hint">Следующий элемент вы найдёте у экрана с информацией о князе, при котором Русь
+            окончательно освободилась
+            от монгольского ига.</p>
+        </div>
+        <div class="quest" v-show="state==4">
+          <p class="description">Иван III заслуженно считается освободителем Руси от монгольского ига. Стояние на реке
+            Угре в 1480 году,
+            результатом которого было отступление войск хана Ахмата, ознаменовало окончательную победу Руси в борьбе за
+            свою
+            независимость.</p>
 
-			<p class="hint">Следующий элемент вы найдёте у экрана с информацией о правителе, носившем прозвище
-			  Тёмный.</p>
-		  </div>
-		  <div class="quest" v-show="state==5">
-			<p class="description">Дружба великого князя Василия II с татарами и сборы на выкуп вызывали у многих москвичей
-			  удивление. Этим решил
-			  воспользоваться его двоюродный брат Дмитрий Шемяка. В 1446 году он, сговорившись в князем Иваном Можайским,
-			  занимает Москву. Василий II был схвачен в Троице-Сергиевом монастыре, лишён зрения и отправлен в заточение. В
-			  результате ослепления Василий II и получил в народе прозвище Тёмный.</p>
+          <p class="hint">Следующий элемент вы найдёте у экрана с информацией о правителе, носившем прозвище
+            Тёмный.</p>
+        </div>
+        <div class="quest" v-show="state==5">
+          <p class="description">Дружба великого князя Василия II с татарами и сборы на выкуп вызывали у многих
+            москвичей
+            удивление. Этим решил
+            воспользоваться его двоюродный брат Дмитрий Шемяка. В 1446 году он, сговорившись в князем Иваном Можайским,
+            занимает Москву. Василий II был схвачен в Троице-Сергиевом монастыре, лишён зрения и отправлен в заточение.
+            В
+            результате ослепления Василий II и получил в народе прозвище Тёмный.</p>
 
-			<p class="hint">Следующий элемент вы найдёте у экрана с информацией о первом русском царе.</p>
-		  </div>
-		  <div class="quest" v-show="state==6">
-			<p class="description">Иван IV – одна из самых противоречивых исторических фигур, до настоящего времени
-			  вызывающая оживлённые споры.
-			  Выдающийся государственный деятель, жестокий деспот, талантливый писатель – все эти определения в равной
-			  степени
-			  применимы к незаурядной персоне первого русского царя и архитектора российского самодержавия.</p>
+          <p class="hint">Следующий элемент вы найдёте у экрана с информацией о первом русском царе.</p>
+        </div>
+        <div class="quest" v-show="state==6">
+          <p class="description">Иван IV – одна из самых противоречивых исторических фигур, до настоящего времени
+            вызывающая оживлённые споры.
+            Выдающийся государственный деятель, жестокий деспот, талантливый писатель – все эти определения в равной
+            степени
+            применимы к незаурядной персоне первого русского царя и архитектора российского самодержавия.</p>
 
-			<p class="hint">Следующий элемент вы найдёте у экрана с информацией о правителе, при котором Русь вошла в
-			  христианскую
-			  цивилизацию.</p>
-		  </div>
-		  <div class="quest" v-show="state==7">
-			<p class="description">Вхождение Руси в христианскую ойкумену, в результате Крещения в 988 году, открыло ей путь
-			  для религиозных,
-			  культурных, политических и экономических контактов с христианскими странами Европы и Азии. Принятие
-			  христианства
-			  дало мощный импульс развитию на Руси письменности, грамотности, книжного дела.</p>
+          <p class="hint">Следующий элемент вы найдёте у экрана с информацией о правителе, при котором Русь вошла в
+            христианскую
+            цивилизацию.</p>
+        </div>
+        <div class="quest" v-show="state==7">
+          <p class="description">Вхождение Руси в христианскую ойкумену, в результате Крещения в 988 году, открыло ей
+            путь
+            для религиозных,
+            культурных, политических и экономических контактов с христианскими странами Европы и Азии. Принятие
+            христианства
+            дало мощный импульс развитию на Руси письменности, грамотности, книжного дела.</p>
 
-			<p class="hint">Поздравляем! Вы справились и завершили прохождение QR-квеста, продемонстрировав свои знания и
-			  умение работать с информацией. Цифры пароля были выбраны нами неспроста – это годы правления династии
-			  Рюриковичей - 862 – 1598.
+          <p class="hint">Поздравляем! Вы справились и завершили прохождение QR-квеста, продемонстрировав свои знания и
+            умение работать с информацией. Цифры пароля были выбраны нами неспроста – это годы правления династии
+            Рюриковичей - 862 – 1598.
 
-			  Покажите этот ответ администратору Исторического парка и после возвращения планшета вы получите свой приз.
-			  Поздравляем!</p>
-		  </div>
-	  </div>
-	  <div class='qr-scanner__switch_cam' v-show="state>-1" @click="openQR_scanner">
+            Покажите этот ответ администратору Исторического парка и после возвращения планшета вы получите свой приз.
+            Поздравляем!</p>
+        </div>
+      </div>
+      <div class='qr-scanner__switch_cam' v-show="state>-1" @click="openQR_scanner">
         <button class='qr-scanner__switch_cam_button'>Сканировать</button>
       </div>
-	</div>
+    </div>
 
     <div class="app qr-scanner uk-width-1-1" v-show="showQR_scanner">
 
@@ -130,19 +134,19 @@
 
       <div class="qr-scanner__body">
         <img src="./content/settings_btn.png" class="qr-scanner__setting-btn" @click="openSettings">
-        <qrcode-scanner :qrbox="300" :fps="10" @result="onScan" />
+        <qrcode-scanner :qrbox="300" :fps="1" @result="onScan" :disable="scanStop"/>
       </div>
     </div>
-	
-	<div class="app qr-scanner error uk-width-1-1" v-show="showQR_scanner_error">
-        <div class="qr-error">
-			Неверно!
-		</div>
+
+    <div class="app qr-scanner error uk-width-1-1" v-show="showQR_scanner_error">
+      <div class="qr-error">
+        Неверно!
+      </div>
     </div>
-	<div class="app qr-scanner success uk-width-1-1" v-show="showQR_scanner_success">
-        <div class="qr-success">
-			Верно!
-		</div>
+    <div class="app qr-scanner success uk-width-1-1" v-show="showQR_scanner_success">
+      <div class="qr-success">
+        Верно!
+      </div>
     </div>
   </div>
 
@@ -171,12 +175,15 @@
         };
         const html5QrcodeScanner = new Html5QrcodeScanner('qr-code-full-region', config);
         html5QrcodeScanner.render(this.onScanSuccess);
-        document.getElementById("qr-code-full-region__dashboard").style.display = "none";
       },
       methods: {
         onScanSuccess(decodedText, decodedResult) {
-          this.$emit('result', decodedText, decodedResult);
-        }
+          if (!this.disable) {
+            this.$emit('result', decodedText, decodedResult);
+          } else {
+            this.$emit('result', 'выключено нахуй', 'подтверждаю');
+          }
+        },
       }
     });
 
@@ -185,9 +192,9 @@
       data: {
         showMainMenu: false,
         showQR_scanner: true,
-		showQR_scanner_error: false,
-		showQR_scanner_success: false,
-        showItem1: false,
+        showQR_scanner_error: false,
+        showQR_scanner_success: false,
+        lastQR: '',
         state: -1,
         qr_s: 'start',
         qr_1: 'ebjhsc',
@@ -197,12 +204,12 @@
         qr_5: 'zjamsk',
         qr_6: 'bnaiws',
         qr_7: 'iakwsl',
+        scanStop: true,
       },
       methods: {
         clearScreen() {
           this.showMainMenu = false;
           this.showQR_scanner = false;
-          this.showItem1 = false;
           window.scrollTo(0, 0);
         },
         goToMainMenu() {
@@ -213,52 +220,65 @@
           this.clearScreen()
           this.showQR_scanner = true
         },
-		openQR_scanner_error() {
+        openQR_scanner_error() {
           this.showQR_scanner_error = true
-		  setTimeout(() => {
-			this.showQR_scanner_error = false;
-		  }, "1000")
+          setTimeout(() => {
+            this.showQR_scanner_error = false;
+          }, "1000")
         },
-		openQR_scanner_success() {
+        openQR_scanner_success() {
           this.showQR_scanner_success = true
-		  setTimeout(() => {
-			this.showQR_scanner_success = false;
-		  }, "1000")
+          setTimeout(() => {
+            this.showQR_scanner_success = false;
+          }, "1000")
         },
         onScan(decodedText, decodedResult) {
           if (decodedText == this.qr_s && this.state == -1) {
+            this.lastQR = decodedText
             this.state = 0
             this.goToMainMenu()
           } else if (decodedText == this.qr_1 && this.state == 0) {
+            this.lastQR = decodedText
             this.state += 1;
             this.goToMainMenu()
-			this.openQR_scanner_success()
+            this.openQR_scanner_success()
           } else if (decodedText == this.qr_2 && this.state == 1) {
+            this.lastQR = decodedText
             this.state += 1;
             this.goToMainMenu()
-			this.openQR_scanner_success()
+            this.openQR_scanner_success()
           } else if (decodedText == this.qr_3 && this.state == 2) {
+            this.lastQR = decodedText
             this.state += 1;
             this.goToMainMenu()
-			this.openQR_scanner_success()
+            this.openQR_scanner_success()
           } else if (decodedText == this.qr_4 && this.state == 3) {
+            this.lastQR = decodedText
             this.state += 1;
             this.goToMainMenu()
-			this.openQR_scanner_success()
+            this.openQR_scanner_success()
           } else if (decodedText == this.qr_5 && this.state == 4) {
+            this.lastQR = decodedText
             this.state += 1;
             this.goToMainMenu()
-			this.openQR_scanner_success()
+            this.openQR_scanner_success()
           } else if (decodedText == this.qr_6 && this.state == 5) {
+            this.lastQR = decodedText
             this.state += 1;
             this.goToMainMenu()
-			this.openQR_scanner_success()
+            this.openQR_scanner_success()
           } else if (decodedText == this.qr_7 && this.state == 6) {
+            this.lastQR = decodedText
             this.state += 1;
             this.goToMainMenu()
-			this.openQR_scanner_success()
+            this.openQR_scanner_success()
+          } else if (decodedText == this.lastQR) {
+            console.log(`PASS: Text = ${decodedText}; \n State = ${this.state}`)
+            //pass
           } else {
             console.log(`Text = ${decodedText}; \n State = ${this.state}`)
+            this.lastQR = decodedText
+            this.openQR_scanner_error()
           }
         },
         openSettings() {
@@ -277,13 +297,13 @@
       },
     })
 
-    // отделить планшеты
+    // отделить ПК дебаг
     setTimeout(() => {
       if (navigator.userAgent == 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36') {
         app.goToMainMenu()
         app.state = 0
       };
-    }, 1000);
+    }, 2000);
 
 
   </script>
