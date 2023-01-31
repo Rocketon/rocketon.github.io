@@ -218,15 +218,15 @@ font-family: 'old_slave';
 
 @keyframes redblink {
   from {
-    background: rgba(255, 0, 0, 0.0);
-  }
-
-  50% {
     background: rgba(255, 0, 0, 0.5);
   }
 
+  50% {
+    background: rgba(255, 0, 0, 0.7);
+  }
+
   to {
-    background: rgba(255, 0, 0, 0.0);
+    background: rgba(255, 0, 0, 0.5);
   }
 }
 
@@ -260,14 +260,14 @@ font-family: 'old_slave';
 
 @keyframes greenblink {
   from {
-    background: rgba(0, 255, 0, 0.0);
-  }
-
-  50% {
     background: rgba(0, 255, 0, 0.5);
   }
 
+  50% {
+    background: rgba(0, 255, 0, 0.7);
+  }
+
   to {
-    background: rgba(0, 255, 0, 0.0);
+    background: rgba(0, 255, 0, 0.5);
   }
 }

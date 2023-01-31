@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name='viewport' content='width=device-width, height=device-height, initial-scale:1, user-scalable=no' />
-  <meta http-equiv="cache-control" content="no-cache">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/uikit.min.css">
   <script src="js/uikit.min.js"></script>
@@ -191,7 +190,7 @@
         showQR_scanner_success: false,
         lastQR: '',
         state: -1,
-        qr_s: 'start',
+        qr_s: 'https://rocketon.github.io/#start',
         qr_1: 'ebjhsc',
         qr_2: 'ityquw',
         qr_3: 'gjasyw',
@@ -299,7 +298,9 @@
         app.state = 0
       };
     }, 2000);
-
+	
+	let txt = document.location.href.split('#').pop();
+	console.log(txt)
 
   </script>
 
