@@ -29,12 +29,11 @@ body {
   background-attachment: fixed; /* Закрепляем изображение */
 }
 .main {
-  height: 100vh;
 
 }
 
 .app {
-  min-height: 100%;
+  min-height: 100vh;
   /*max-height: 895px;*/
   max-width: 602px;
   margin: 0 auto;
@@ -63,7 +62,33 @@ body {
   width: 25px;
   z-index: 2;
 }
-
+#qr-code-full-region__scan_region {
+	display:flex;
+    justify-content: center; /*центрируем элемент по горизонтали */
+    align-items: center; /* и вертикали */
+}
+#html5-qrcode-anchor-scan-type-change {
+	display: none !important; 
+}
+#html5-qrcode-button-camera-permission {
+	width: 160px;
+  height: 60px;
+  color: #fff;
+  border-radius: 5px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+    7px 7px 20px 0px rgba(0, 0, 0, .1),
+    4px 4px 5px 0px rgba(0, 0, 0, .1);
+  outline: none;
+  background: #DAA520;
+  border: none;
+  font-family: 'old_slave';
+  font-size: 20px;
+}
 .qr-scanner {
   height: 100vh;
 }
@@ -73,6 +98,7 @@ body {
   margin: 0 auto;
   text-align: center;
   z-index: 3;
+  padding-bottom: 15px;
 }
 
 .qr-scanner__switch_cam_button {
@@ -115,14 +141,17 @@ body {
   color: black;
   font-size: 18pt;
 }
-
+.picture {
+	margin: 15px 0;
+}
 .hint {
+font-family: 'old_slave';
+  padding: 0 0 15px 0;
   color: black;
   font-size: 20pt;
   font-style: italic;
   text-align: center;
 }
-
 .rckt-dotnav {
   height: 75px;
   width: 100%;
@@ -159,11 +188,6 @@ body {
 
 .description {
   margin: 0 auto;
-}
-
-.hint {
-  font-family: 'old_slave';
-  margin-top: 15px;
 }
 
 .error {
