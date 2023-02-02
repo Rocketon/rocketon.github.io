@@ -293,14 +293,15 @@
 
     // отделить ПК дебаг
     setTimeout(() => {
-      if (navigator.userAgent == 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36') {
+      let txt = document.location.href.split('#').pop();
+	console.log(txt)
+      if (txt == 'start') {
         app.goToMainMenu()
         app.state = 0
       };
-    }, 2000);
+    }, 500);
 	
-	let txt = document.location.href.split('#').pop();
-	console.log(txt)
+	
 
   </script>
 
