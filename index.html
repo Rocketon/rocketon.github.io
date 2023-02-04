@@ -123,8 +123,7 @@
       </div>
 
       <div class="qr-scanner__body">
-        <img src="./content/settings_btn.png" class="qr-scanner__setting-btn" @click="openSettings">
-        <qrcode-scanner :qrbox="300" :fps="1" @result="onScan" :disable="scanStop"/>
+        <qrcode-scanner id="reader" :qrbox="300" :fps="5" @result="onScan"/>
       </div>
 	  
 	  <div class='qr-scanner__switch_cam' v-show="state>-1" @click="goToMainMenu">
@@ -147,9 +146,11 @@
 
 
   <script src="js/vue.js"></script>
-  <script src="js/qrcode.js"></script>
+  <!--<script src="js/qrcode.js"></script>-->
+  <script src="js/html5-qrcode.min.js"></script>
 
   <script type="application/javascript">
+
     Vue.component('qrcode-scanner', {
       props: {
         qrbox: {
@@ -165,18 +166,22 @@
       mounted() {
         const config = {
           fps: this.fps,
-          qrbox: this.qrbox,
         };
-        const html5QrcodeScanner = new Html5QrcodeScanner('qr-code-full-region', config);
-        html5QrcodeScanner.render(this.onScanSuccess);
+        let html5QrCode = new Html5Qrcode("reader");
+		let qrCodeSuccessCallback = 
+		html5QrCode.start({ facingMode: "environment" }, config, (decodedText, decodedResult) => {
+			this.onScanSuccess(decodedText, decodedResult);
+		}, (errorMessage) => {
+			
+ 		})
+ 		.catch ((err) => {
+ 			html5QrCode.stop();
+ 			html5QrCode.clear();
+ 		});
       },
       methods: {
         onScanSuccess(decodedText, decodedResult) {
-          if (!this.disable) {
-            this.$emit('result', decodedText, decodedResult);
-          } else {
-            this.$emit('result', 'выключено нахуй', 'подтверждаю');
-          }
+          this.$emit('result', decodedText, decodedResult);
         },
       }
     });
