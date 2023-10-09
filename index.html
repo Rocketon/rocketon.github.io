@@ -175,14 +175,6 @@
       },
       template: `<div id="qr-code-full-region"></div>`,
       mounted() {
-        navigator.mediaDevices
-          .getUserMedia({ audio: true, video: true })
-          .then(function (stream) {
-            /* используем поток */
-          })
-          .catch(function (err) {
-            alert(err)
-          });
         const config = {
           fps: this.fps,
         };
@@ -191,10 +183,9 @@
           html5QrCode.start({ facingMode: "environment" }, config, (decodedText, decodedResult) => {
             this.onScanSuccess(decodedText, decodedResult);
           }, (errorMessage) => {
-
+            console.log(errorMessage)
           })
             .catch((err) => {
-              alert(err)
               html5QrCode.stop();
               html5QrCode.clear();
             });
