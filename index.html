@@ -304,7 +304,7 @@
             this.lastQR = decodedText
             this.openQR_scanner_error()
           }
-          localStorage.setItem(state, this.state)
+          localStorage.setItem('state', this.state)
         },
         openSettings() {
           if (document.getElementById("qr-code-full-region__dashboard").style.display == "none") {
